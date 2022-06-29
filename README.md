@@ -1,8 +1,11 @@
 <div align="center">
     <a href="https://plan4better.de/">
         <img src="app/client/public/img/logo_green.png" width="300">
+    <a href="https://www.ex-tra-project.eu/">
+        <img src="app/client/public/img/ex-tra.png" width="300">
     </a>
 </div>
+
 
 <br/>
 <div align="center">
