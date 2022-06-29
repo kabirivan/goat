@@ -12,30 +12,6 @@
 
 </div>
 
-## About
+## Feature/EX-TRA branch
 
-This is the homebase of Geo Open Accessibility Tool (GOAT). GOAT is meant to be an open source, interactive,
-flexible and useful web-tool for accessibility planning. Currenty the tool is maintained by the Startup [Plan4Better](https://plan4better.de) and the [Technical University of Munich (TUM)](https://www.bgu.tum.de/en/sv/homepage/). 
-
-For more information:
-
-[GOAT Docs](https://plan4better.de/docs/background/)
-
-[GOAT Technical Docs](https://www.open-accessibility.org/docs/quick_start_docker/)
-
-[GOAT demo versions](https://plan4better.de/goatlive/)
-
-[Join GOAT User Group on Telegram](https://t.me/joinchat/EpAk7BYbIF72q7D3OTUCZQ)
-
-[Follow GOAT on LinkedIn](https://www.linkedin.com/company/plan4better)
-
-[Follow GOAT on Twitter](https://twitter.com/plan4better)
-
-## Scientific Publications
-
-If you are interested in scientific publications related to GOAT check out the following: 
-
-Pajares, E.; Büttner, B.; Jehle, U.; Nichols, A.; Wulfhorst, G. Accessibility by proximity: Addressing the lack of interactive
-accessibility instruments for active mobility. J. Transp. Geogr. 2021, 93, 103080, https://doi.org/10.1016/j.jtrangeo.2021.103080.
-
-Pajares, E.; Muñoz Nieto, R.; Meng, L.; Wulfhorst, G. Population Disaggregation on the Building Level Based on Outdated Census Data. ISPRS Int. J. Geo-Inf. 2021, 10, 662. https://doi.org/10.3390/ijgi10100662
+In this branch, the [Technical University of Munich (TUM)](https://www.bgu.tum.de/en/sv/homepage/) and the [Politecnico di Milano (POLIMI)](https://www.polimi.it/) are developing new features within the [JPI Urban Europe](https://jpi-urbaneurope.eu/project/ex-tra/) project [EX-TRA](https://www.ex-tra-project.eu/). The main innovation is the ‘Inclusive Accessibility by Proximity Index (IAPI)’, which was conceptualized by the partners of POLIMI and technically implemented by TUM. This index aims to evaluate basic accessibility levels to a set of various daily needs and by different active mobility profiles (pedestrians, cyclists, people with reduced mobility)considering the characteristics of the paths affecting walkability and cyclability. Therewith, shortcomings can be identified and potential measures developed (e.g. Street Experiments). 
