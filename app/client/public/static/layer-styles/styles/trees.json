@@ -1,0 +1,37 @@
+{
+    "name": "trees",
+    "rules": [
+      {
+        "name": "tree",
+        "symbolizers": [
+          {
+            "kind": "Mark",
+            "color": "#2b9432",
+            "radius": 10,
+            "wellKnownName": "circle"
+          }
+        ],
+        "filter": [
+          "==",
+          "natural",
+          "tree"
+        ]
+      },
+      {
+        "name": "shrub",
+        "symbolizers": [
+          {
+            "kind": "Mark",
+            "color": "#afdb28",
+            "radius": 10,
+            "wellKnownName": "circle"
+          }
+        ],
+        "filter": [
+          "==",
+          "natural",
+          "shrub"
+        ]
+      }
+    ]
+  }
