@@ -396,6 +396,7 @@
       "noiseAircraftLNight": "Aircraft noise - Level LNight",
       "noiseProtectionBauleitplanung": "Noise protection area for urban land use planning",
       "ways_parking": "Parking",
+      "ways_segregated": "Segregation of pedestrians and cyclists",
       "ways_smoothness": "Smoothness",
       "ways_speed": "Speed",
       "ways_category": "Street Categories Detailed",
@@ -413,6 +414,7 @@
       "ways_traffic_protection": "Traffic Protection",
       "ways_security": "Illuminance",
       "ways_sidewalk_quality": "Gehkomfort",
+      "heatmap_iapi": "Inclusive Accessibility by Proximity Index",
       "heatmap_connectivity": "Connectivity",
       "heatmap_luptai": "Comparison of Accessibility and Population Density",
       "heatmap_population": "Population Density",
@@ -484,9 +486,9 @@
               "title": "Elderly",
               "tooltip": "Routing with reduced walking speed"
             },
-            "safe_night": {
-              "title": "Safe night",
-              "tooltip": "Routing excluding unlit paths"
+            "comfort": {
+              "title": "Comfort",
+              "tooltip": "Routing including atractive parameters"
             }
           }
         },
@@ -500,6 +502,10 @@
             "pedelec": {
               "title": "Pedelec",
               "tooltip": "Pedelec"
+            },
+            "comfort": {
+              "title": "Comfort",
+              "tooltip": "Routing including atractive parameters"
             }
           }
         },
@@ -513,6 +519,10 @@
             "electric": {
               "title": "Electric",
               "tooltip": "Electric"
+            },
+            "comfort": {
+              "title": "Comfort",
+              "tooltip": "Routing including atractive parameters"
             }
           }
         }
@@ -644,6 +654,7 @@
     "shop": "Shop",
     "tourismAndLeisure": "Tourism & Leisure",
     "nursery": "Nursery",
+    "childcare": "Childcare",
     "kindergarten": "Kindergarten",
     "primary_school": "Primary school",
     "secondary_school": "Secondary school",
@@ -674,7 +685,7 @@
     "transmilenio": "Transmilenio",
     "rail_station": "Rail Station",
     "taxi": "Taxi",
-    "bikesharing_ffb": "Bikesharing-Stations",
+    "bikesharing": "Bikesharing-Stations",
     "carsharing_ffb": "Carsharing-Stations",
     "charging_station_marker_ffb": "E-Charging Station privat",
     "charging_station_other_ffb": "E-Charging Station privat (under construction)",
@@ -689,6 +700,8 @@
     "dentist": "Dentist",
     "doctors": "Doctor",
     "pharmacy": "Pharmacy",
+    "clinic": "Clinic",
+    "post_office": "Post office",
     "post_box": "Post box",
     "fuel": "Fuel",
     "recycling": "Recycling",
@@ -698,6 +711,7 @@
     "convenience": "Convenience store",
     "greengrocer": "Greengrocer",
     "kiosk": "Kiosk",
+    "newsagent": "Newsagent",
     "mall": "Mall",
     "shoes": "Shoes",
     "supermarket": "Supermarket",
@@ -709,6 +723,7 @@
     "marketplace": "Marketplace",
     "cinema": "Cinema",
     "theatre": "Theatre",
+    "social_facility": "Social Facility",
     "museum": "Museum",
     "hotel": "Hotel",
     "hostel": "Hostel",
@@ -718,6 +733,7 @@
     "hospital": "Hospital",
     "playground": "Playground",
     "population": "Population",
+    "public_administration": "Public administration",
     "recreationAreas": "Recreation Areas",
     "park": "Park",
     "forest": "Forest",

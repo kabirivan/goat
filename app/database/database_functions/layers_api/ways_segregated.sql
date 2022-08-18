@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION footpath_segregated()
+CREATE OR REPLACE FUNCTION ways_segregated()
 RETURNS TABLE (segregated text, highway text, geom geometry) AS
 $$
 	SELECT f.segregated, f.highway, f.geom 
@@ -7,6 +7,6 @@ $$
 $$
 LANGUAGE sql;
 
-COMMENT ON FUNCTION footpath_segregated() 
+COMMENT ON FUNCTION ways_segregated() 
 IS '**FOR-API-FUNCTION** RETURNS col_names[segregated,highway,geom] **FOR-API-FUNCTION**';
 
