@@ -38,8 +38,40 @@ import csv
 from io import StringIO
 
 
+
+
+
 class CRUDHeatmap:
-    # == WALKING AND CYCLING INDICATORS ==#
+    async def compute_two_step_floating_catchment(self, db: AsyncSession):
+        print('')
+        """
+        WITH relevant_pois AS 
+        (
+            SELECT r.*, (p.tags -> 'capacity')::integer AS capacity
+            FROM basic.poi p, basic.study_area s, customer.reached_poi_heatmap r  
+            WHERE ST_Intersects(p.geom, s.buffer_geom_heatmap) 
+            AND p.category IN ('nursery')--(SELECT jsonb_array_elements_text(pois_one_entrance))
+            AND s.id = 91620000
+            AND r.poi_uid = p.uid 
+            AND r.scenario_id IS NULL
+            AND (p.tags -> 'capacity') IS NOT NULL 
+        )
+        SELECT j.*, capacity::float / demand_potential::float AS ratio_capacity_demand 
+        FROM relevant_pois p 
+        CROSS JOIN LATERAL 
+        (
+            SELECT sum(g.population * accessibility_indices[1][array_position(p.grid_visualization_ids, g.id)]) AS demand_potential 
+            FROM basic.grid_visualization g 
+            WHERE g.id = ANY(p.grid_visualization_ids)
+            AND g.population IS NOT NULL 
+        ) j; 
+        """
+        #TODO: 
+        #
+        #Summe erreichbare Bevölkerung gewichtet nach Distanz  
+        #Kapazität / Summe
+
+
 
     async def prepare_starting_points(self, db: AsyncSession, current_user: models.User):
         """Get starting points for heatmap calculation."""

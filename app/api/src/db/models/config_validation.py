@@ -57,3 +57,5 @@ LayerGroup = Schema({str: {"icon": str, "children": [LayerCategory]}})
 LayerGroups = Schema({"layer_groups": [LayerGroup]})
 
 HeatmapConfiguration = Schema({str: {"sensitivity": int, "weight": int}})
+
+FloatingCatchmentAreaConfiguration = Schema({"demography": [str], "opportunities": {str: {"sensitivity": int, "weight": int}}})

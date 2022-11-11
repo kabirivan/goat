@@ -10,7 +10,7 @@ from starlette.responses import JSONResponse
 from src import crud
 from src.crud.base import CRUDBase
 from src.db import models
-from src.db.models.config_validation import HeatmapConfiguration, check_dict_schema
+from src.db.models.config_validation import HeatmapConfiguration, FloatingCatchmentAreaConfiguration, check_dict_schema
 from src.endpoints import deps
 from src.resources.enums import (
     AccessibilityHeatmapTypes,
@@ -293,6 +293,50 @@ async def calculate_oev_gueteklassen(
     if params.return_type.value == ReturnType.geojson.value:
         oev_gueteklassen_features = jsonable_encoder(oev_gueteklassen_features)
     return return_geojson_or_geobuf(oev_gueteklassen_features, params.return_type.value)
+
+@router.post("/two-step-floating-catchment-area")
+async def calculate_two_step_floating_catchment_area(
+    *,
+    db: AsyncSession = Depends(deps.get_db),
+    current_user: models.User = Depends(deps.get_current_active_user),
+    modus: CalculationTypes,
+    scenario_id: Optional[int] = Query(
+        description="The scenario id to calculate the heatmap in case the modus is 'scenario' or 'comparison'",
+        default=0,
+        example=1,
+    ),
+    configuration: str = Query(
+        ...,
+        description="The configuration per POI category to create the two step floating catchment area.",
+        example=request_examples["two_step_floating_catchment_area"],
+    ),
+    return_type: ReturnType = Query(
+        description="Return type of the response", default=ReturnType.geojson
+    ),
+) -> Any:
+    """
+    Two step floating catchment area is an indicator for assessing the supply of a population group with a one or more services
+    """
+    _return_type = return_type.value
+    if return_type == ReturnType.geobuf.value:
+        _return_type = "db_geobuf"
+    scenario_id = await deps.check_user_owns_scenario(
+        db=db, current_user=current_user, scenario_id=scenario_id
+    )
+    if check_dict_schema(FloatingCatchmentAreaConfiguration, json.loads(configuration)) == False:
+        raise HTTPException(status_code=400, detail="Heatmap configuration is not valid.")
+
+    active_data_uploads_study_area = await db.execute(
+        func.basic.active_data_uploads_study_area(current_user.id)
+    )
+    active_data_uploads_study_area = active_data_uploads_study_area.scalar()
+    if active_data_uploads_study_area == None:
+        active_data_uploads_study_area = []
+
+    
+
+    print(configuration)
+    print('Test')
 
 
 @router.post("/local-accessibility-aggregated")
