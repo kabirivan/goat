@@ -35,7 +35,6 @@ export default function PreviewMap(props: PreviewMapType) {
   const { initialViewState, MAP_ACCESS_TOKEN, mapStyle, scaleShow, navigationControl } = props;
 
   const { classes, cx } = useStyles();
-
   return (
     <div className={cx(classes.root)}>
       <Map
